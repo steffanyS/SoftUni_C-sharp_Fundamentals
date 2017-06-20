@@ -14,11 +14,6 @@ namespace SimpleCalculator
             var values = input.Split(' ');
             var stack=new Stack<string>(values.Reverse());
 
-            foreach (var value in values)
-            {
-                stack.Push(value);
-            }
-
             while (stack.Count>1)
             {
                 var firstNumber=int.Parse(stack.Pop());
@@ -31,7 +26,7 @@ namespace SimpleCalculator
                 }
                 else if(operation=="-")
                 {
-                    result = firstNumber + secondNumber;
+                    result = firstNumber - secondNumber;
                 }
 
                 stack.Push(result.ToString());
